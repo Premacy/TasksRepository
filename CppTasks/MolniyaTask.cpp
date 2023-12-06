@@ -15,7 +15,7 @@ std::vector<int> zip( const std::vector<int> &a, const std::vector<int> &b ){
             result[k] = a[i];
             i++;
         }else{
-            result[k] = b[i];
+            result[k] = b[j];
             j++;
         }
         k = i + j;
@@ -24,7 +24,7 @@ std::vector<int> zip( const std::vector<int> &a, const std::vector<int> &b ){
     return result;
 }
 
-void readVector( std::vector<int> v ){
+void readVector( std::vector<int> &v ){
     const size_t n = v.size();
 
     for( int i = 0; i < n; i++ ){
@@ -34,7 +34,7 @@ void readVector( std::vector<int> v ){
 
 void printVector( const std::vector<int> &v ){
     for( int elem : v ){
-        std::cout << elem << std::endl;
+        std::cout << elem;
     }
 }
 
