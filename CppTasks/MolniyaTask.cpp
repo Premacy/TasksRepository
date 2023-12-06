@@ -1,6 +1,7 @@
 #include <iostream>
 #include <vector>
 
+/* упаковываем два вектора в один, чередуя элементы */
 std::vector<int> zip( const std::vector<int> &a, const std::vector<int> &b ){
     const int n = a.size() + b.size();
     std::vector<int> result( n );
