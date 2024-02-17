@@ -80,7 +80,7 @@ void BigNumber::parseFromInt(int n){
 
     digits.reserve(nth);
 
-    while( n > 0 ){
+    while ( n > 0 ){
         digit = n % 10;
         n /= 10;
         
@@ -96,7 +96,7 @@ BigNumber BigNumber::operator * (int n){
 
     const size_t sizeN = len();
 
-    for(size_t i = 0; i < sizeN; i++){
+    for (size_t i = 0; i < sizeN; i++){
         res = digits[i] * n + rem;    // умножили
 
         digit = res % 10;
@@ -105,7 +105,7 @@ BigNumber BigNumber::operator * (int n){
         n_.digits.push_back(digit);
     }
 
-    if(rem) n_.digits.push_back(digit);
+    if (rem) n_.digits.push_back(digit);
 
     return n_;
 }
@@ -120,7 +120,7 @@ BigNumber operator *(const BigNumber &n1, const BigNumber &n2){
 
     BigNumber result;
 
-    for(size_t i = 0; i < sizeN1; ++i){
+    for (size_t i = 0; i < sizeN1; ++i){
         BigNumber n;
 
         digit = n2.getDigit(i) * pw;
@@ -144,7 +144,7 @@ BigNumber operator +(const BigNumber &n1, const BigNumber &n2){
 
     int digit1, digit2;
 
-    for(size_t i = 0; i < maxLen; i++){
+    for (size_t i = 0; i < maxLen; i++){
         if   ( i >= n1.len() ) digit1 = 0;
         else                   digit1 = n1.getDigit(i);
 
@@ -158,7 +158,7 @@ BigNumber operator +(const BigNumber &n1, const BigNumber &n2){
         result.addDigit(newDigit);
     }
 
-    if( d > 0) result.addDigit(d);
+    if (d > 0) result.addDigit(d);
 
     return result;
 }
